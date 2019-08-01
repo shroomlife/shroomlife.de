@@ -8,6 +8,14 @@
     ],
     "rewrites": [
       {
+        "source": "/datenschutz",
+        "destination": "/pages/datenschutz.html"
+      },
+      {
+        "source": "/impressum",
+        "destination": "/pages/impressum.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

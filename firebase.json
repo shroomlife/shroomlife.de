@@ -1,7 +1,7 @@
 {
   "hosting": {
+    "site": "shroomlife-malkuth",
     "public": "public",
-    "site": "shroomlife.de",
     "ignore": [
       "firebase.json",
       "**/.*",

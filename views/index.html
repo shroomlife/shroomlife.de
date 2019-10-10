@@ -1,0 +1,346 @@
+{{> include path="header" title="shroomlife - dein entwickler. schreib mir. 🍄"}}
+
+<!-- Header -->
+<header id="header">
+	<div class="content">
+		<h1>shroomlife</h1>
+		<small>Robin Lehmann &raquo; <a href="http://www.sae.edu/deu/de/web-bachelor" target="_blank" rel="noopener">BA Web
+				Development</a></small>
+		<div>
+			<span class="badge badge-info">fullstack</span>
+			<span class="badge badge-info">frontend</span>
+			<span class="badge badge-info">backend</span>
+			<span class="badge badge-info">deployment</span>
+			<span class="badge badge-info">automation</span>
+		</div>
+		<div class="mb-1">
+			<span class="badge badge-xs badge-primary">javascript</span>
+			<span class="badge badge-xs badge-primary">php</span>
+			<span class="badge badge-xs badge-primary">python</span>
+			<span class="badge badge-xs badge-primary">html</span>
+			<span class="badge badge-xs badge-primary">css</span>
+		</div>
+		<p>
+			guten entwickler wieder nicht gefunden?<br />
+			jetzt kannst du mir schreiben was los ist.
+		</p>
+		<ul class="actions">
+			<li><a href="mailto:robin@shroomlife.de" class="button primary icon"><i class="fas fa-comments"></i> schreiben</a></li>
+			<li><a href="#me" class="button icon scrolly"><i class="fas fa-chevron-down"></i> mehr erfahren</a></li>
+		</ul>
+	</div>
+	<div class="image phone">
+		<div class="panda-container">
+				<div class="effect-wrapper">
+  
+						<div class="layer1">
+						  <div>
+							  <div>
+								  <div>
+									  <div>
+										  <div>
+											  <div>
+												  <div>
+													  <div>
+														  <div>
+																<div>
+																  <div>
+																	  <div></div>
+																  </div>
+															  </div>
+														  </div>
+													  </div>
+												  </div>
+											  </div>
+										  </div>
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+						</div>
+					  
+						<div class="layer2">
+						  <div>
+							  <div>
+								  <div>
+									  <div>
+										  <div>
+											  <div>
+												  <div>
+													  <div>
+														  <div>
+																<div>
+																  <div>
+																	  <div></div>
+																  </div>
+															  </div>
+														  </div>
+													  </div>
+												  </div>
+											  </div>
+										  </div>
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+						</div>
+					  
+					  </div>
+		</div>
+	</div>
+</header>
+
+<section id="me" class="wrapper">
+	<header class="major">
+		<h2>ich <i class="fas fa-om"></i></h2>
+	</header>
+	<div class="inner alt">
+		<section class="spotlight">
+			<div class="image">
+				<img src="/images/me.webp" alt="robin lehmann" />
+			</div>
+			<div class="content">
+				<h3>Robin Lehmann</h3>
+				<span class="subheadline">programmierer & mensch | <a href="https://www.asperg.de" target="_blank" rel="noopener">asperg</a>
+					|
+					seit 04/1989</span>
+				<p>ich habe spaß daran visionäre ideen in der technikwelt wirklichkeit werden zu lassen. das gibts jetzt leider
+					nicht jeden tag, aber auch kleinere dinge würde ich gerne gegen etwas entlohnung für dich erledigen. schau dich
+					um und finde heraus, ob ich deine website oder app weiter bringen kann. ich freu mich auf dich! <i class="fas fa-heart"></i></p>
+				<p class="mb-5">
+					<span class="badge badge-success">aufmerksam</span>
+					<span class="badge badge-success">psychoaktiv</span>
+					<span class="badge badge-success">spirituell</span>
+					<span class="badge badge-success">achtsam</span>
+					<span class="badge badge-success">sorgfältig</span>
+					<span class="badge badge-success">erfahren</span>
+					<span class="badge badge-success">kompetent</span>
+					<br />
+					<span class="badge badge-secondary">programmierer</span>
+					<span class="badge badge-secondary">speaker</span>
+					<span class="badge badge-secondary">querdenker</span>
+					<span class="badge badge-secondary">freigeist</span>
+					<span class="badge badge-secondary">philosoph</span>
+				</p>
+			</div>
+		</section>
+	</div>
+	<canvas class="trees"></canvas>
+</section>
+<!-- One -->
+<section id="skills" class="wrapper style2 special">
+	<header class="major">
+		<h2>skills <i class="fas fa-infinity"></i></h2>
+	</header>
+	<div class="container">
+		<div class="row justify-content-center">
+			{{#each skills}}
+			<div class="col-3 col-lg-2 skill">
+				{{#if this.url}}
+				<a href="{{this.url}}" target="_blank" rel="noopener" class="hvr-float-shadow"><i class="devicon-{{this.class}}"
+					 title="{{this.name}}"></i></a>
+				{{else}}
+				<i class="devicon-{{this.class}}" title="{{this.name}}"></i>
+				{{/if}}
+			</div>
+			{{/each}}
+			<div class="col-12">
+				<h4 class="container-cutter">noch mehr gefordert?</h4>
+			</div>
+			<div class="col-12 mb-5">
+				<span class="badge badge-success">full-stack entwickler</span>
+				<span class="badge badge-dark">crud entwickler</span>
+				<span class="badge badge-info">frontend developer</span>
+				<span class="badge badge-warning">backend developer</span>
+				<span class="badge badge-primary">system administrator</span>
+				<span class="badge badge-success">docker expert</span>
+				<span class="badge badge-success">php application developer</span>
+				<span class="badge badge-secondary">shopify application developer</span>
+				<span class="badge badge-success">websocket entwickler</span>
+				<span class="badge badge-primary">progressive web app entwickler (pwa)</span>
+				<span class="badge badge-primary">mysql datenbanken</span>
+				<span class="badge badge-secondary">nosql datenbanken</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Two -->
+<section id="projects" class="wrapper">
+	<header class="major">
+		<h2>projekte und kunden <i class="fas fa-user-secret"></i></h2>
+	</header>
+	<div class="inner alt">
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://www.lab1886.com" target="_blank" rel="noopener">
+					<img src="images/projects/lab1886.webp" alt="Lab1886" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>Lab1886</h3>
+				<span class="subheadline">solution architect | ab 11/2018 | <a href="https://www.lab1886.com" target="_blank" rel="noopener">https://www.lab1886.com</a></span>
+				<p>"In 1886, Carl Benz and Gottlieb Daimler invented the first automobile. Lab1886 builds upon this heritage and
+					pioneering spirit. As the corporate incubator of Daimler AG, we create innovative business models and digital
+					services at lightning speed. Lab1886 is shaping the future of mobility. We combine the best of both worlds: the
+					power of a global company with the freedom of a start-up."</p>
+				<p>
+					<span class="badge badge-success">fullstack</span>
+					<span class="badge badge-success">incubate</span>
+					<span class="badge badge-success">frontend</span>
+					<span class="badge badge-success">backend</span>
+					<span class="badge badge-success">digitalisierung</span>
+					<span class="badge badge-success">mobilität</span>
+				</p>
+			</div>
+		</section>
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://hongi.com" target="_blank" rel="noopener">
+					<img src="images/projects/hongi.webp" alt="HONGi" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>HONGi</h3>
+				<span class="subheadline">cto | seit 01/2017 | <a href="https://hongi.com" target="_blank" rel="noopener">https://hongi.com</a></span>
+				<p>für HONGi mache ich alles was so anfällt. von neuen backend features, automatischen versand-labels,
+					automatisierten rechnungen und anpassungen am frontend bin ich für die technik hier verantwortlich. wenn die
+					seite also nicht läuft, dann ist das höchstwahrscheinlich meine schuld.</p>
+				<p>
+					<span class="badge badge-success">html</span>
+					<span class="badge badge-success">css</span>
+					<span class="badge badge-success">javascript</span>
+					<span class="badge badge-success">php</span>
+					<span class="badge badge-success">apache</span>
+					<span class="badge badge-success">payment</span>
+					<span class="badge badge-success">shop</span>
+					<span class="badge badge-success">cms</span>
+					<span class="badge badge-success">backend</span>
+				</p>
+			</div>
+		</section>
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://www.ax-semantics.com" target="_blank" rel="noopener">
+					<img src="images/projects/ax-semantics.webp" alt="AX Semantics" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>AX Semantics</h3>
+				<span class="subheadline">freiberuflich | <a href="https://www.ax-semantics.com" target="_blank" rel="noopener">https://www.ax-semantics.com</a></span>
+				<p>für AX Semantics entwickle ich an verschiedenen projekten. darunter hauptsächlich tools zur nutzung der AX
+					Semantics API schnittstelle.</p>
+				<p>
+					<span class="badge badge-success">html</span>
+					<span class="badge badge-success">css</span>
+					<span class="badge badge-success">javascript</span>
+					<span class="badge badge-success">nodejs</span>
+					<span class="badge badge-success">docker</span>
+					<span class="badge badge-success">shopify</span>
+				</p>
+			</div>
+		</section>
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://www.ankerherz.de/" target="_blank" rel="noopener">
+					<img src="images/projects/ankerherz.webp" alt="Ankerherz" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>Ankerherz Verlag</h3>
+				<span class="subheadline">freiberuflich | <a href="https://www.ankerherz.de" target="_blank" rel="noopener">https://www.ankerherz.de</a></span>
+				<p>für Ankerherz habe ich mal die komplette seite administriert und nach den wünschen von ankerherz ihr wordpress
+					um features erweitert und am laufen gehalten. aktuell betreue ich nur noch den blog von Ankerherz.</p>
+				<p>
+					<span class="badge badge-success">html</span>
+					<span class="badge badge-success">css</span>
+					<span class="badge badge-success">javascript</span>
+					<span class="badge badge-success">php</span>
+					<span class="badge badge-success">apache</span>
+					<span class="badge badge-success">woocommerce</span>
+					<span class="badge badge-success">wordpress</span>
+				</p>
+			</div>
+		</section>
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://www.zalando.de" target="_blank" rel="noopener">
+					<img src="images/projects/zalando.webp" alt="Zalando" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>Zalando</h3>
+				<span class="subheadline">frontend developer | 2011 - 2014 | <a href="https://www.zalando.de" target="_blank" rel="noopener">https://www.zalando.de</a></span>
+				<p>ich habe 3 jahre für zalando im marketing gearbeitet und zusammen mit einem team neue frontend features für den
+					shop getestet. des weiteren habe ich viele landing pages mit dynamischen javascript features gebaut.</p>
+				<p>
+					<span class="badge badge-success">html</span>
+					<span class="badge badge-success">css</span>
+					<span class="badge badge-success">javascript</span>
+					<span class="badge badge-success">shop</span>
+					<span class="badge badge-success">cms</span>
+					<span class="badge badge-success">backend</span>
+				</p>
+			</div>
+		</section>
+		<section class="spotlight">
+			<div class="image">
+				<a href="https://jimago.de" target="_blank" rel="noopener">
+					<img src="images/projects/jimago.webp" alt="jimago" />
+				</a>
+			</div>
+			<div class="content">
+				<h3>jimago</h3>
+				<span class="subheadline">founder & cto | seit 2014</span>
+				<p>für jimago habe ich auch ein cms entwickelt, dass sowohl dem endkunden, fotografen und der druckerei gerecht
+					werden soll. das projekt ist leider nicht mehr online.</p>
+				<p>
+					<span class="badge badge-success">html</span>
+					<span class="badge badge-success">css</span>
+					<span class="badge badge-success">javascript</span>
+					<span class="badge badge-success">php</span>
+					<span class="badge badge-success">apache</span>
+					<span class="badge badge-success">payment</span>
+				</p>
+			</div>
+		</section>
+		<section class="special">
+			<div class="col-12">
+				<p><i class="far fa-smile"></i> ich bin ein aufmerksamer und bewusster entwickler</p>
+				<p><i class="far fa-smile"></i> ich freue mich über beta tests</p>
+				<p><i class="far fa-smile-beam"></i> ich denke mit und habe einen hohen qualitätsanspruch</p>
+				<p><i class="far fa-grin-hearts"></i> ich freue mich auf dich und dein projekt</p>
+			</div>
+		</section>
+	</div>
+</section>
+
+<!-- Three -->
+<section id="three" class="wrapper style2 special">
+	<header class="major">
+		<h2><i class="far fa-question-circle"></i> noch nicht überzeugt von meinen qualitäten?</h2>
+		<p>kein thema! schreibe mir doch einfach mal eine mail<br />oder adde mich bei einem sozialen netzwerk.<br />ganz wie du magst. melde dich einfach!</p>
+	</header>
+	<ul class="actions special">
+		<li><a href="mailto:robin@shroomlife.de" class="button primary icon"><i class="fas fa-comments"></i> schreiben</a></li>
+	</ul>
+</section>
+
+<section id="three" class="wrapper">
+	<header class="major">
+		<h2>impressions <i class="fas fa-camera-retro"></i></h2>
+	</header>
+	<div class="inner">
+		<div class="grid instagram">
+			{{#each instagram.data}}
+			<div class="grid-item">
+				<a href="{{this.link}}" target="_blank" rel="noopener" class="hvr-grow" data-title="{{this.caption.text}}" data-likes="{{this.likes.count}}" data-comments="{{this.comments.count}}" data-time="{{this.created_time}}">
+					<img src="{{this.images.low_resolution.url}}" alt="{{this.caption.text}}" />
+				</a>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</section>
+
+{{> include path="footer"}}

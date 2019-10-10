@@ -6,11 +6,13 @@ const minify = require('html-minifier').minify;
 const uuid = require("uuid/v1");
 const buildId = uuid();
 
-const dir = __dirname === "/" ? "" : __dirname;
+const path = require("path");
+
+const dir = path.resolve(__dirname, "public");
 console.log(`starting build in ${__dirname} => ${dir}`);
 
 handlebars.registerPartial("include", (context) => {
-	let file = `${__dirname}/views/inc/${context.path}.html`;
+	let file = `${dir}/views/inc/${context.path}.html`;
 	let html = fs.readFileSync(file).toString();
 	let include = handlebars.compile(html);
 	return include(context);
@@ -129,7 +131,7 @@ fs.readFile(`${dir}/index.html`, (err, content) => {
 			"keepClosingSlash": true,
 		});
 
-		let newHtml = "<!doctype html><!-- version 131118.5 -->" + minifiedHtml;
+		let newHtml = "<!doctype html><!-- version 08092019.1 -->" + minifiedHtml;
 
 		fs.writeFileSync(`${dir}/views/index.min.html`, newHtml);
 		console.log(`minified html to ${dir}/views/index.min.html`);

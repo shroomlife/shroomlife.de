@@ -5,11 +5,15 @@
   "main": "index.js",
   "author": "robin@shroomlife.de",
   "license": "ISC",
-  "dependencies": {
-    "firebase-admin": "^8.3.0",
-    "firebase-functions": "^3.2.0"
+  "devDependencies": {
+    "jsdom": "15.1.1",
+    "node-minify": "3.6.0",
+    "handlebars": "4.1.2",
+    "html-minifier": "4.0.0",
+    "uuid": "3.3.2"
   },
   "scripts": {
+    "build": "node build",
     "deploy": "firebase deploy"
   }
 }

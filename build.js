@@ -12,19 +12,19 @@ const dir = path.resolve(__dirname, "public");
 console.log(`starting build in ${__dirname} => ${dir}`);
 
 handlebars.registerPartial("include", (context) => {
-	let file = `${dir}/views/inc/${context.path}.html`;
+  let file = `${__dirname}/views/inc/${context.path}.html`;
 	let html = fs.readFileSync(file).toString();
 	let include = handlebars.compile(html);
 	return include(context);
 });
 
-fs.readFile(`${dir}/index.html`, (err, content) => {
+fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 
-	let config = JSON.parse(process.argv[2]);
+	let config = fs.readFileSync(path.resolve(__dirname, 'config.json'));
 
 	let indexHtml = String(content);
 	let index = handlebars.compile(indexHtml);
-	let html = index(config);
+  let html = index(config);
 
 	let document = new jsdom.JSDOM(html, {});
 	let window = document.window;
@@ -34,14 +34,14 @@ fs.readFile(`${dir}/index.html`, (err, content) => {
 	let tasks = [];
 
 	// minify js
-	let scriptsFile = `${dir}/static/app.min.js`;
+	let scriptsFile = `${dir}/app.min.js`;
 	let scripts = [];
 
 	jQuery('body script').each((index, script) => {
 
 		script = jQuery(script);
 		let src = script.attr('src');
-		let srcPath = `${dir}/static/${src}`;
+		let srcPath = `static/${src}`;
 
 		if(fs.existsSync(srcPath)) {
 			scripts.push(srcPath);
@@ -64,14 +64,14 @@ fs.readFile(`${dir}/index.html`, (err, content) => {
 	tasks.push(jsMini);
 
 	// minify css
-	let stylesFile = `${dir}/static/app.min.css`;
+	let stylesFile = `${dir}/app.min.css`;
 	let stylesheets = [];
 
 	jQuery('head link[rel="stylesheet"]').each((index, style) => {
 
 		style = jQuery(style);
 		let href = style.attr("href");
-		let stylePath = `${dir}/static/${href}`;
+		let stylePath = `static/${href}`;
 
 		if(fs.existsSync(stylePath)) {
 			stylesheets.push(stylePath);
@@ -131,10 +131,10 @@ fs.readFile(`${dir}/index.html`, (err, content) => {
 			"keepClosingSlash": true,
 		});
 
-		let newHtml = "<!doctype html><!-- version 08092019.1 -->" + minifiedHtml;
+		let newHtml = "<!doctype html>" + minifiedHtml + "<!-- update 23/03/2020 -->";
 
-		fs.writeFileSync(`${dir}/views/index.min.html`, newHtml);
-		console.log(`minified html to ${dir}/views/index.min.html`);
+		fs.writeFileSync(`${dir}/index.min.html`, newHtml);
+		console.log(`minified html to ${dir}/index.min.html`);
 
 	}).catch((err) => {
 		console.log(err);

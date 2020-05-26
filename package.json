@@ -1,19 +1,30 @@
 {
   "name": "shroomlife.de",
-  "version": "1.0.0",
-  "description": "shroomlife portfolio website",
+  "version": "1.0.1",
+  "description": "shroomlife portfolio",
   "main": "index.js",
-  "author": "robin@shroomlife.de",
-  "license": "ISC",
-  "devDependencies": {
-    "handlebars": "4.3.0",
-    "html-minifier": "4.0.0",
-    "jsdom": "15.1.1",
-    "node-minify": "3.6.0",
-    "uuid": "3.3.2"
-  },
   "scripts": {
     "build": "node build",
-    "deploy": "firebase deploy"
+    "start": "node index production",
+    "debug": "node index",
+    "docker": "docker build . --tag shroomlife/shroomlife.de:latest",
+    "push": "docker push shroomlife/shroomlife.de:latest"
+  },
+  "author": "shroomlife",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.4",
+    "handlebars": "4.0.12",
+    "moment": "2.22.2",
+    "compression": "1.7.3",
+    "jsdom": "13.0.0",
+    "jquery": "3.3.1",
+    "node-minify": "3.5.1",
+    "html-minifier": "3.5.20",
+    "uuid": "3.3.2"
+  },
+  "resolutions": {
+    "minimist": ">= 1.2.2",
+    "acorn": ">= 6.4.1"
   }
 }

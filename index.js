@@ -4,7 +4,6 @@ const fs = require('fs');
 const compression = require('compression');
 const http = require('http');
 const fork = require('child_process').fork;
-const request = require('request');
 
 const app = express();
 const server = http.createServer(app);
@@ -19,58 +18,14 @@ handlebars.registerPartial("include", (context) => {
 });
 
 const configPath = `${__dirname}/config.json`;
-const updatedConfigPath = `${__dirname}/config.updated.json`;
 
 const stage = typeof process.argv[2] !== 'undefined' ? String(process.argv[2]) : "development";
 const production = stage === "production" ? true : false;
 
 app.use(compression());
-
-// 
-app.get('/update', (req, res) => {
-
-	if(req.query.robin === "kristina") {
-
-		request({
-			"url": `https://api.instagram.com/v1/users/self/media/recent/?access_token=3039117223.d74fe2a.b5921108dec44c078b34a00fe5c1c2ff`,
-			"method": "get",
-			"followRedirect": true
-		}, (err, resp, body) => {
-
-			console.log(body);
-			if(err) {
-				res.status(500).send(error.message);
-			} else {
-
-				let json = JSON.parse(body);
-
-				if(resp.statusCode === 200) {
-
-					let writeConfig = loadConfig();
-					writeConfig.instagram = json;
-
-					let saveConfig = JSON.stringify(writeConfig);
-
-					fs.writeFileSync(updatedConfigPath, saveConfig);
-
-					res.redirect('/#done');
-
-				} else {
-					res.status(500).send(`error from instagram: ${json.meta.error_message}`);
-				}
-			}
-
-		});
-
-	} else {
-		res.redirect("/");
-	}
-
-});
-
 app.get('/', (req, res) => {
 
-	let indexFilePath = `${__dirname}/views/index.min.html`;
+	let indexFilePath = `${__dirname}/public/index.min.html`;
 	fs.exists(indexFilePath, (exists) => {
 
 		if (exists && production) {
@@ -79,7 +34,6 @@ app.get('/', (req, res) => {
 
 			let config = loadConfig();
 
-			console.log(config.instagram.data);
 			indexFilePath = `${__dirname}/views/index.html`;
 
 			fs.readFile(indexFilePath, (err, data) => {
@@ -144,14 +98,9 @@ let listener = server.listen(80, () => {
 
 function loadConfig() {
 
-	if(fs.existsSync(updatedConfigPath)) {
-		configString = String(fs.readFileSync(updatedConfigPath));
-	} else {
-		configString = String(fs.readFileSync(configPath));
-	}
-
-	let config = JSON.parse(configString);
-
+  configString = String(fs.readFileSync(configPath));
+  let config = JSON.parse(configString);
+  
 	config.host = (stage === "production" ? "shroomlife.de" : "localhost");
 	return config;
 

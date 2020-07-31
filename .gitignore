@@ -1,1 +1,4 @@
 /node_modules
+/mm/node_modules
+/mm/dist
+.env

@@ -27,7 +27,7 @@
           </a>
         </div>
         <div class="col-12">
-          <button class="btn btn-danger btn-block mt-3">Ausloggen</button>
+          <button class="btn btn-danger btn-block mt-3" @click.prevent="doLogout">Ausloggen</button>
         </div>
       </div>
     </div>
@@ -59,6 +59,14 @@ export default {
     },
   },
   methods: {
+    doLogout() {
+      this.contacts = []
+      this.login = {
+        password: "",
+        token: false,
+      }
+      this.isLoading = true
+    },
     getPhoneLink(contact) {
       return `tel:${contact.phone}`
     },
@@ -78,7 +86,7 @@ export default {
       const loginRequestConfig = {
         method: "post",
         data: { ...this.login },
-        url: "//localhost/mm",
+        url: "/mm",
       };
       axios(loginRequestConfig)
         .then((response) => {
@@ -99,7 +107,7 @@ export default {
       const loginRequestConfig = {
         method: "post",
         data: { ...this.login },
-        url: "//localhost/mmA",
+        url: "/mmA",
         headers: {
           MM_KEY: this.login.token,
         },
@@ -138,5 +146,8 @@ h3 {
 }
 div.ion {
   vertical-align: text-top;
+}
+.swal2-actions button {
+  line-height: 40px;
 }
 </style>

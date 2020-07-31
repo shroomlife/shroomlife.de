@@ -1,14 +1,17 @@
+require('dotenv').config()
 const express = require('express');
+const bodyParser = require('body-parser');
 const handlebars = require('handlebars');
 const fs = require('fs');
 const compression = require('compression');
 const http = require('http');
 const fork = require('child_process').fork;
+const cors = require('cors')
 
 const app = express();
 const server = http.createServer(app);
 
-const static = express.static(`${__dirname}/static`);
+const static = express.static(`${__dirname}/public`);
 
 handlebars.registerPartial("include", (context) => {
 	let file = `${__dirname}/views/inc/${context.path}.html`;
@@ -22,10 +25,16 @@ const configPath = `${__dirname}/config.json`;
 const stage = typeof process.argv[2] !== 'undefined' ? String(process.argv[2]) : "development";
 const production = stage === "production" ? true : false;
 
+if(production !== true) {
+  app.use(cors())
+}
+
+app.use(bodyParser.json())
+
 app.use(compression());
 app.get('/', (req, res) => {
 
-	let indexFilePath = `${__dirname}/public/index.min.html`;
+  let indexFilePath = `${__dirname}/public/index.min.html`;
 	fs.exists(indexFilePath, (exists) => {
 
 		if (exists && production) {
@@ -53,6 +62,32 @@ app.get('/', (req, res) => {
 });
 
 app.use(static);
+
+const mmApp = express.static(`${__dirname}/mm/dist`);
+app.use('/mm', mmApp);
+
+app.post('/mm', (req, res) => {
+  const password = req.body.password
+  console.log('LOGIN ATTEMPT', password, req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+  if(password === process.env.MM_PASSWORD) {
+    console.log('LOGIN SUCCESS')
+    res.send(process.env.MM_KEY)
+  } else {
+    console.log('LOGIN FAILURE')
+    res.sendStatus(401)
+  }
+})
+
+app.post('/mmA', (req, res) => {
+
+  if(req.headers.mm_key === process.env.MM_KEY) {
+    res.json(JSON.parse(process.env.MM_CONTACTS))
+  } else {
+    res.sendStatus(401)
+  }
+
+})
+
 app.get('/:page', (req, res) => {
 
 	let pagePath = `${__dirname}/views/pages/${req.params.page}.html`;
@@ -101,7 +136,7 @@ function loadConfig() {
   configString = String(fs.readFileSync(configPath));
   let config = JSON.parse(configString);
   
-	config.host = (stage === "production" ? "shroomlife.de" : "localhost");
+	config.host = process.env.HOST ? process.env.HOST : (stage === "production" ? "shroomlife.de" : "localhost");
 	return config;
 
 }

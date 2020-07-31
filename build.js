@@ -20,7 +20,11 @@ handlebars.registerPartial("include", (context) => {
 
 fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 
-	let config = fs.readFileSync(path.resolve(__dirname, 'config.json'));
+  let config = fs.readFileSync(path.resolve(__dirname, 'config.json'));
+  
+  if(typeof process.env.HOST !== 'undefined') {
+    config.host = process.env.HOST
+  }
 
 	let indexHtml = String(content);
 	let index = handlebars.compile(indexHtml);
@@ -34,7 +38,7 @@ fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 	let tasks = [];
 
 	// minify js
-	let scriptsFile = `${dir}/assets/app.min.js`;
+	let scriptsFile = `${dir}/app.min.js`;
 	let scripts = [];
 
 	jQuery('body script').each((index, script) => {
@@ -64,7 +68,7 @@ fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 	tasks.push(jsMini);
 
 	// minify css
-	let stylesFile = `${dir}/assets/app.min.css`;
+	let stylesFile = `${dir}/app.min.css`;
 	let stylesheets = [];
 
 	jQuery('head link[rel="stylesheet"]').each((index, style) => {

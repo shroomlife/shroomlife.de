@@ -1,0 +1,26 @@
+{{> include path="header" title="mike&michelle - shroomlife"}}
+{{> include path="navbar"}}
+
+<section class="wrapper">
+	<div class="container">
+
+		<header class="major major-left">
+			<h2>mike&michelle</h2>
+    </header>
+
+    <div id="app">
+
+      <form @submit="loadContacts">
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Anzeigen</button>
+      </form>
+
+    </div>
+
+	</div>
+</section>
+
+{{> include path="footer"}}

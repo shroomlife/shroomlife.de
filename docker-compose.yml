@@ -1,12 +1,11 @@
 version: '3.6'
 services:
   app:
-    container_name: 001.local.proxy
+    container_name: app
     image: shroomlife/shroomlife.de:latest
     restart: always
-  proxy:
-    container_name: proxy
-    image: shroomlife/docker-https-proxy:latest
+    build: .
     ports:
       - "80:80"
-      - "443:443"
+    env_file:
+      - .env

@@ -34,7 +34,7 @@ fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 	let tasks = [];
 
 	// minify js
-	let scriptsFile = `${dir}/app.min.js`;
+	let scriptsFile = `${dir}/assets/app.min.js`;
 	let scripts = [];
 
 	jQuery('body script').each((index, script) => {
@@ -64,7 +64,7 @@ fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 	tasks.push(jsMini);
 
 	// minify css
-	let stylesFile = `${dir}/app.min.css`;
+	let stylesFile = `${dir}/assets/app.min.css`;
 	let stylesheets = [];
 
 	jQuery('head link[rel="stylesheet"]').each((index, style) => {

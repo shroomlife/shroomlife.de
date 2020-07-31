@@ -1,10 +1,11 @@
 {
   "name": "shroomlife.de",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "shroomlife portfolio",
   "main": "index.js",
   "scripts": {
     "build": "node build",
+    "build-mm": "cd mm && npm run-script build",
     "start": "node index production",
     "dev": "nodemon index",
     "docker": "docker build . --tag shroomlife/shroomlife.de:latest",

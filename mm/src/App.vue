@@ -13,21 +13,33 @@
         </div>
       </div>
       <div v-else>
-        <div class="list-group text-left">
-          <a v-for="contact in contacts" :key="contact.name" :href="getPhoneLink(contact)" class="list-group-item list-group-item-action">
-            <div class="row">
-              <div class="col-5">
-                <button class="btn btn-success"><MdCallIcon /> Anrufen</button>
-              </div>
-              <div class="col">
-                <div><h3>{{contact.name}}</h3></div>
-                <div>{{contact.phone}}</div>
-              </div>
-            </div>
-          </a>
+        <div class="row mb-3">
+          <div class="col-6" v-for="contact in mm" :key="contact.name">
+            <a class="btn btn-info btn-lg btn-block" :href="getPhoneLink(contact)"><MdCallIcon /> {{contact.name}}</a>
+          </div>
         </div>
-        <div class="col-12">
-          <button class="btn btn-danger btn-block mt-3" @click.prevent="doLogout">Ausloggen</button>
+        <div class="row">
+          <div class="col">
+            <div class="list-group text-left">
+              <a v-for="contact in contacts" :key="contact.name" :href="getPhoneLink(contact)" class="list-group-item list-group-item-action">
+                <div class="row">
+                  <div class="col-5">
+                    <button class="btn btn-success"><MdCallIcon /> Anrufen</button>
+                  </div>
+                  <div class="col">
+                    <div><h3>{{contact.name}}</h3></div>
+                    <div>{{contact.phone}}</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-danger btn-block mt-3" @click.prevent="doLogout">Ausloggen</button>
+          </div>
         </div>
       </div>
     </div>
@@ -48,6 +60,7 @@ export default {
       },
       isLoading: true,
       contacts: [],
+      mm: []
     };
   },
   components: {
@@ -113,8 +126,9 @@ export default {
         },
       };
       axios(loginRequestConfig)
-        .then((response) => {
-          this.contacts = response.data.slice(0);
+        .then(response => {
+          this.contacts = response.data.angels.slice(0);
+          this.mm = response.data.mm.slice(0);
           this.isLoading = false
         })
         .catch(this.showException);

@@ -11,8 +11,6 @@ const cors = require('cors')
 const app = express();
 const server = http.createServer(app);
 
-const static = express.static(`${__dirname}/public`);
-
 handlebars.registerPartial("include", (context) => {
 	let file = `${__dirname}/views/inc/${context.path}.html`;
 	let html = fs.readFileSync(file).toString();
@@ -47,7 +45,7 @@ app.get('/', (req, res) => {
 
 			fs.readFile(indexFilePath, (err, data) => {
 
-				let indexHtml = String(data);
+        let indexHtml = String(data);
 				let index = handlebars.compile(indexHtml);
 
 				let html = index(config);
@@ -61,7 +59,12 @@ app.get('/', (req, res) => {
 
 });
 
-app.use(static);
+if(production !== true) {
+  const static = express.static(`${__dirname}/static`);
+  app.use(static);
+}
+const public = express.static(`${__dirname}/public`);
+app.use(public);
 
 const mmApp = express.static(`${__dirname}/mm/dist`);
 app.use('/mm', mmApp);

@@ -1,6 +1,11 @@
 {
   "skills": [
     {
+      "name": "Amazon Web Services (AWS)",
+      "class": "amazonwebservices-original",
+      "url": "https://aws.amazon.com/"
+    },
+    {
       "name": "AngularJS",
       "class": "angularjs-plain",
       "url": "https://angularjs.org/"
@@ -14,6 +19,11 @@
       "name": "Bootstrap",
       "class": "bootstrap-plain",
       "url": "https://getbootstrap.com/"
+    },
+    {
+      "name": "CouchDB",
+      "class": "couchdb-plain",
+      "url": "https://couchdb.apache.org/"
     },
     {
       "name": "CSS",
@@ -46,14 +56,14 @@
       "url": "https://github.com/"
     },
     {
-      "name": "Go",
-      "class": "go-plain",
-      "url": "https://golang.org/"
-    },
-    {
       "name": "Google",
       "class": "google-plain",
       "url": "https://developers.google.com/web/"
+    },
+    {
+      "name": "HandlebarsJS",
+      "class": "handlebars-plain",
+      "url": "https://handlebarsjs.com/"
     },
     {
       "name": "HTML",
@@ -74,6 +84,11 @@
       "name": "Linux & Unix",
       "class": "linux-plain",
       "url": "https://www.linux.org/"
+    },
+    {
+      "name": "MySQL",
+      "class": "mysql-plain",
+      "url": "https://www.mysql.com/"
     },
     {
       "name": "NoSQL Datenbanken",
@@ -101,13 +116,33 @@
       "url": "https://www.python.org/"
     },
     {
+      "name": "React",
+      "class": "react-original",
+      "url": "https://reactjs.org/"
+    },
+    {
       "name": "Ubuntu",
       "class": "ubuntu-plain",
       "url": "https://www.ubuntu.com/"
     },
     {
+      "name": "VueJS",
+      "class": "vuejs-plain",
+      "url": "https://vuejs.org/"
+    },
+    {
+      "name": "Webpack",
+      "class": "webpack-plain",
+      "url": "https://de.wordpress.com"
+    },
+    {
       "name": "Wordpress",
       "class": "wordpress-plain",
+      "url": "https://de.wordpress.com"
+    },
+    {
+      "name": "Yarn",
+      "class": "yarn-plain",
       "url": "https://de.wordpress.com"
     }
   ],

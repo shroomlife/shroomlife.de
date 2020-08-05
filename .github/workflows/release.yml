@@ -3,7 +3,7 @@ name: DockerPush
 on:
   push:
     branches:
-    - master
+    - release
 
 jobs:
 
@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@main
       with:
-        ref: master
+        ref: release
     - name: Build Docker Image
       run: docker build . --tag shroomlife/shroomlife.de:latest
     - name: Login to Docker Hub

@@ -20,7 +20,7 @@ handlebars.registerPartial("include", (context) => {
 
 fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
 
-  let config = fs.readFileSync(path.resolve(__dirname, 'config.json'));
+  let config = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config.json')));
   
   if(typeof process.env.HOST !== 'undefined') {
     config.host = process.env.HOST

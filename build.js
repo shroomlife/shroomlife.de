@@ -12,14 +12,14 @@ const dir = path.resolve(__dirname, 'public')
 console.log(`starting build in ${__dirname} => ${dir}`)
 
 handlebars.registerPartial('include', (context) => {
-  const file = `${__dirname}/views/inc/${context.path}.html`
+  const file = `${__dirname}/views/inc/${context.path}.mustache`
   const html = fs.readFileSync(file).toString()
   const include = handlebars.compile(html)
   return include(context)
 })
 
-fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
-  if (err) console.log(err)
+fs.readFile(`${__dirname}/views/index.mustache`, (err, content) => {
+  if (err) return console.log(err)
   const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config.json')))
 
   if (typeof process.env.HOST !== 'undefined') {
@@ -128,7 +128,7 @@ fs.readFile(`${__dirname}/views/index.html`, (err, content) => {
       keepClosingSlash: true
     })
 
-    const newHtml = '<!doctype html>' + minifiedHtml + '<!-- update 23/03/2020 -->'
+    const newHtml = '<!doctype html>' + minifiedHtml + '<!-- update 22/09/2020 -->'
 
     fs.writeFileSync(`${dir}/index.min.html`, newHtml)
     console.log(`minified html to ${dir}/index.min.html`)

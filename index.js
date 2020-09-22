@@ -32,8 +32,9 @@ app.use(bodyParser.json())
 app.use(compression())
 app.get('/', (req, res) => {
   let indexFilePath = `${__dirname}/public/index.min.html`
-  fs.access(indexFilePath, (exists) => {
-    if (exists && production) {
+  fs.access(indexFilePath, fs.constants.R_OK, (err) => {
+    if (err) return console.error(err)
+    if (production) {
       res.sendFile(indexFilePath)
     } else {
       const config = loadConfig()

@@ -8,7 +8,7 @@
     {
       "name": "AngularJS",
       "class": "angularjs-plain",
-      "url": "https://angularjs.org/"
+      "url": "https://medium.com/@chillypenguin/stopping-angular-40ea642c484d"
     },
     {
       "name": "Apache",
@@ -38,7 +38,7 @@
     {
       "name": "Express",
       "class": "express-original",
-      "url": "https://expressjs.com/de/"
+      "url": "https://expressjs.com/"
     },
     {
       "name": "git",
@@ -48,12 +48,12 @@
     {
       "name": "github",
       "class": "github-plain",
-      "url": "https://github.com/shroomlife"
+      "url": "https://github.com/shroomlife/"
     },
     {
       "name": "GitLab",
       "class": "gitlab-plain",
-      "url": "https://github.com/"
+      "url": "https://about.gitlab.com/"
     },
     {
       "name": "Google",
@@ -103,7 +103,7 @@
     {
       "name": "Node.js",
       "class": "nodejs-plain",
-      "url": "https://nodejs.org/de/"
+      "url": "https://nodejs.org/"
     },
     {
       "name": "PHP",
@@ -118,7 +118,7 @@
     {
       "name": "React",
       "class": "react-original",
-      "url": "https://reactjs.org/"
+      "url": "https://dev.to/ender_minyard/why-you-should-stop-using-react-g7c"
     },
     {
       "name": "Ubuntu",
@@ -133,17 +133,17 @@
     {
       "name": "Webpack",
       "class": "webpack-plain",
-      "url": "https://de.wordpress.com"
+      "url": "https://webpack.js.org/"
     },
     {
       "name": "Wordpress",
       "class": "wordpress-plain",
-      "url": "https://de.wordpress.com"
+      "url": "https://de.wordpress.com/"
     },
     {
       "name": "Yarn",
       "class": "yarn-plain",
-      "url": "https://de.wordpress.com"
+      "url": "https://yarnpkg.com/"
     }
   ],
   "page": "",

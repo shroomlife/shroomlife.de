@@ -1,13 +1,13 @@
 {
   "name": "shroomlife.de",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "shroomlife portfolio",
   "main": "index.js",
   "scripts": {
     "build": "node build",
     "build-mm": "cd mm && npm run-script build",
     "start": "node index production",
-    "dev": "nodemon index",
+    "dev": "nodemon -e js,mustache index",
     "docker": "docker build . --tag shroomlife/shroomlife.de:latest",
     "push": "docker push shroomlife/shroomlife.de:latest"
   },
@@ -32,6 +32,12 @@
     "acorn": ">= 6.4.1"
   },
   "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^2.0.4"
   }
 }

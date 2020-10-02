@@ -53,10 +53,8 @@ app.get('/', (req, res) => {
   })
 })
 
-if (production !== true) {
-  const staticServer = express.static(`${__dirname}/static`)
-  app.use(staticServer)
-}
+const staticServer = express.static(`${__dirname}/static`)
+app.use(staticServer)
 const publicServer = express.static(`${__dirname}/public`)
 app.use(publicServer)
 

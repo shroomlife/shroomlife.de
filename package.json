@@ -1,7 +1,7 @@
 {
   "name": "shroomlife.de",
-  "version": "1.1.4",
-  "description": "shroomlife portfolio",
+  "version": "1.1.5",
+  "description": "The Official Website of shroomlife",
   "license": "ISC",
   "author": "shroomlife",
   "main": "index.js",

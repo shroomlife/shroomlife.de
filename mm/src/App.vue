@@ -121,7 +121,7 @@ export default {
     loadContacts() {
       if(this.login.token === false) return this.doLogout()
       const loginRequestConfig = {
-        method: "post",
+        method: "get",
         url: "/mmA",
         headers: {
           MM_KEY: this.login.token,

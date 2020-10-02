@@ -73,7 +73,7 @@ app.post('/mm', (req, res) => {
   }
 })
 
-app.post('/mmA', (req, res) => {
+app.get('/mmA', (req, res) => {
   if (req.headers.mm_key === process.env.MM_KEY) {
     res.json(JSON.parse(process.env.MM_CONTACTS))
   } else {

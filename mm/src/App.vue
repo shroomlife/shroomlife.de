@@ -98,7 +98,9 @@ export default {
     doLogin() {
       const loginRequestConfig = {
         method: "post",
-        data: { ...this.login },
+        data: {
+          password: this.login.password
+        },
         url: "/mm",
       };
       axios(loginRequestConfig)
@@ -117,9 +119,9 @@ export default {
         });
     },
     loadContacts() {
+      if(this.login.token === false) return this.doLogout()
       const loginRequestConfig = {
         method: "post",
-        data: { ...this.login },
         url: "/mmA",
         headers: {
           MM_KEY: this.login.token,

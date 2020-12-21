@@ -15,7 +15,7 @@
       <div v-else>
         <div class="row mb-3">
           <div class="col-6" v-for="contact in mm" :key="contact.name">
-            <a class="btn btn-info btn-lg btn-block" :href="getPhoneLink(contact)"><MdCallIcon /> {{contact.name}}</a>
+            <a class="btn btn-info btn-lg btn-block" :href="getPhoneLink(contact)"><MdCallIcon /> {{contact.name}}<br /><small>{{contact.phone}}</small></a>
           </div>
         </div>
         <div class="row">

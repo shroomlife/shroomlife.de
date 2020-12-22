@@ -1,6 +1,6 @@
 {
   "name": "mm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
@@ -27,6 +27,7 @@
     "root": true
   },
   "resolutions": {
+    "highlight.js": ">= 10.4.1",
     "node-forge": ">= 0.10.0"
   },
   "dependencies": {

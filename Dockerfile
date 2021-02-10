@@ -3,7 +3,7 @@ LABEL maintainer="robin@shroomlife.de"
 
 WORKDIR /usr/src/app
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install --only=production
 

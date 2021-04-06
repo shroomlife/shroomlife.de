@@ -114,10 +114,10 @@ const listener = server.listen(80, () => {
     console.log(`app is listening at http://${address.address}:${address.port}`)
   }
 
-  if (production) {
-    console.log('starting production build ...')
-    fork('./build.js', [JSON.stringify(loadConfig())])
-  }
+  // if (production) {
+  //   console.log('starting production build ...')
+  //   fork('./build.js', [JSON.stringify(loadConfig())])
+  // }
 })
 
 function loadConfig () {

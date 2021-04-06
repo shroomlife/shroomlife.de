@@ -2,5 +2,4 @@
 /mm/node_modules
 .env
 
-/public/*.min.*
 *.lock

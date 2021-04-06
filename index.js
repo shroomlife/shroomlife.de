@@ -5,7 +5,6 @@ const handlebars = require('handlebars')
 const fs = require('fs')
 const compression = require('compression')
 const http = require('http')
-const fork = require('child_process').fork
 const cors = require('cors')
 
 const app = express()

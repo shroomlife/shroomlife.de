@@ -1,6 +1,6 @@
 {
   "name": "shroomlife.de",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "The Official Website of shroomlife",
   "license": "ISC",
   "author": "shroomlife",
@@ -25,10 +25,10 @@
     "cors": "2.8.5",
     "dotenv": "8.2.0",
     "express": "4.17.1",
-    "handlebars": "4.7.6",
+    "handlebars": "4.7.7",
     "html-minifier": "4.0.0",
-    "jquery": "3.5.1",
-    "jsdom": "16.4.0",
+    "jquery": "3.6.0",
+    "jsdom": "16.5.2",
     "moment": "2.29.1",
     "node-minify": "3.6.0",
     "uuid": "3.3.2"

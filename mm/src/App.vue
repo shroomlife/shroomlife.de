@@ -124,7 +124,7 @@ export default {
         method: "get",
         url: "/mmA",
         headers: {
-          MM_KEY: this.login.token,
+          "mm-key": this.login.token,
         },
       };
       axios(loginRequestConfig)

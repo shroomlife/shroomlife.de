@@ -3,3 +3,4 @@
 .env
 
 *.lock
+package-lock.json

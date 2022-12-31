@@ -64,7 +64,7 @@ app.post('/mm', (req, res) => {
   const password = req.body.password
   console.log('LOGIN ATTEMPT', password, req.headers['x-forwarded-for'] || req.connection.remoteAddress)
   if (password === process.env.MM_PASSWORD) {
-    console.log('LOGIN SUCCESS')
+    console.log('LOGIN SUCCESS', process.env.MM_KEY)
     res.send(process.env.MM_KEY)
   } else {
     console.log('LOGIN FAILURE')

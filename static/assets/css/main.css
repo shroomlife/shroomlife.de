@@ -2589,7 +2589,7 @@ ul.icons {
 
 ul.icons li {
 	display: inline-block;
-	padding: 0 1.5em 0 0;
+	padding: 0 .75em 0 .75em;
 	margin-bottom: 1rem;
 }
 

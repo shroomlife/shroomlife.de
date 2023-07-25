@@ -41,7 +41,6 @@ app.get('/', (req, res) => {
       const config = loadConfig()
 
       if (typeof config.skills !== 'undefined') {
-        // Sort by name ascending in case-insensitive manner
         config.skills = config.skills.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
       }
 

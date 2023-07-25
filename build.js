@@ -28,6 +28,10 @@ fs.readFile(readFilePath, (err, content) => {
     config.host = process.env.HOST
   }
 
+  if (typeof config.skills !== 'undefined') {
+    config.skills = config.skills.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+  }
+
   const indexHtml = String(content)
   const index = handlebars.compile(indexHtml)
   const html = index(config)

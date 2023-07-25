@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
       if (typeof config.skills !== 'undefined') {
         // Sort by name ascending in case-insensitive manner
-        config.skills.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+        config.skills = config.skills.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
       }
 
       indexFilePath = path.join(__dirname, '/views/index.mustache')

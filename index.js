@@ -6,18 +6,19 @@ const fs = require('fs')
 const compression = require('compression')
 const http = require('http')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 const server = http.createServer(app)
 
 handlebars.registerPartial('include', (context) => {
-  const file = `${__dirname}/views/inc/${context.path}.mustache`
-  const html = fs.readFileSync(file).toString()
+  const filePath = path.join(__dirname, '/views/inc/', `${context.path}.mustache`)
+  const html = fs.readFileSync(filePath).toString()
   const include = handlebars.compile(html)
   return include(context)
 })
 
-const configPath = `${__dirname}/config.json`
+const configPath = path.join(__dirname, '/config.json')
 
 const stage = typeof process.argv[2] !== 'undefined' ? String(process.argv[2]) : 'development'
 const production = stage === 'production'
@@ -30,7 +31,8 @@ app.use(bodyParser.json())
 
 app.use(compression())
 app.get('/', (req, res) => {
-  let indexFilePath = `${__dirname}/public/index.min.html`
+  console.log('__dirname', __dirname)
+  let indexFilePath = path.join(__dirname, '/public/index.min.html')
   fs.access(indexFilePath, fs.constants.R_OK, (err) => {
     if (err) return console.error(err)
     if (production) {
@@ -38,7 +40,12 @@ app.get('/', (req, res) => {
     } else {
       const config = loadConfig()
 
-      indexFilePath = `${__dirname}/views/index.mustache`
+      if (typeof config.skills !== 'undefined') {
+        // Sort by name ascending in case-insensitive manner
+        config.skills.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+      }
+
+      indexFilePath = path.join(__dirname, '/views/index.mustache')
 
       fs.readFile(indexFilePath, (err, data) => {
         if (err) console.error(err)
@@ -52,12 +59,16 @@ app.get('/', (req, res) => {
   })
 })
 
-const staticServer = express.static(`${__dirname}/static`)
+const staticFolder = path.join(__dirname, '/static')
+const staticServer = express.static(staticFolder)
 app.use(staticServer)
-const publicServer = express.static(`${__dirname}/public`)
+
+const publicFolder = path.join(__dirname, '/public')
+const publicServer = express.static(publicFolder)
 app.use(publicServer)
 
-const mmApp = express.static(`${__dirname}/mm/dist`)
+const mmAppDistFolder = path.join(__dirname, '/mm/dist')
+const mmApp = express.static(mmAppDistFolder)
 app.use('/mm', mmApp)
 
 app.post('/mm', (req, res) => {
@@ -81,7 +92,7 @@ app.get('/mmA', (req, res) => {
 })
 
 app.get('/:page', (req, res) => {
-  const pagePath = `${__dirname}/views/pages/${req.params.page}.mustache`
+  const pagePath = path.join(__dirname, '/views/pages/', `${req.params.page}.mustache`)
   fs.readFile(pagePath, (err, data) => {
     if (err) {
       res.status(404).end()

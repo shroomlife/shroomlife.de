@@ -3,24 +3,26 @@ const jsdom = require('jsdom')
 const compressor = require('node-minify')
 const handlebars = require('handlebars')
 const minify = require('html-minifier').minify
-const uuid = require('uuid/v1')
-const buildId = uuid()
+const { v1: uuidv1 } = require('uuid')
+const buildId = uuidv1()
 
 const path = require('path')
 
-const dir = path.resolve(__dirname, 'public')
+const dir = path.join(__dirname, 'public')
 console.log(`starting build in ${__dirname} => ${dir}`)
 
 handlebars.registerPartial('include', (context) => {
-  const file = `${__dirname}/views/inc/${context.path}.mustache`
-  const html = fs.readFileSync(file).toString()
+  const filePath = path.join(__dirname, '/views/inc/', `${context.path}.mustache`)
+  const html = fs.readFileSync(filePath).toString()
   const include = handlebars.compile(html)
   return include(context)
 })
 
-fs.readFile(`${__dirname}/views/index.mustache`, (err, content) => {
+const readFilePath = path.join(__dirname, '/views/index.mustache')
+
+fs.readFile(readFilePath, (err, content) => {
   if (err) return console.log(err)
-  const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config.json')))
+  const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json')))
 
   if (typeof process.env.HOST !== 'undefined') {
     config.host = process.env.HOST

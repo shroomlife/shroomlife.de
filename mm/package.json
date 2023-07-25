@@ -31,11 +31,11 @@
     "node-forge": ">= 0.10.0"
   },
   "dependencies": {
-    "axios": "0.21.1",
-    "core-js": "3.8.3",
-    "vue": "2.6.12",
+    "axios": "1.4.0",
+    "core-js": "3.31.1",
+    "vue": "^2",
     "vue-ionicons": "3.0.5",
-    "vue-sweetalert2": "4.2.0"
+    "vue-sweetalert2": "5.0.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",

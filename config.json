@@ -2,72 +2,72 @@
   "skills": [
     {
       "name": "Amazon Web Services (AWS)",
-      "class": "amazonwebservices-original",
+      "class": "amazonwebservices-plain-wordmark",
       "url": "https://aws.amazon.com/"
     },
     {
       "name": "AngularJS",
-      "class": "angularjs-plain",
+      "class": "angularjs-plain-wordmark",
       "url": "https://medium.com/@chillypenguin/stopping-angular-40ea642c484d"
     },
     {
       "name": "Apache",
-      "class": "apache-plain",
+      "class": "apache-plain-wordmark",
       "url": "https://httpd.apache.org/"
     },
     {
       "name": "Bootstrap",
-      "class": "bootstrap-plain",
+      "class": "bootstrap-plain-wordmark",
       "url": "https://getbootstrap.com/"
     },
     {
       "name": "CouchDB",
-      "class": "couchdb-plain",
+      "class": "couchdb-plain-wordmark",
       "url": "https://couchdb.apache.org/"
     },
     {
       "name": "CSS",
-      "class": "css3-plain",
+      "class": "css3-plain-wordmark",
       "url": "https://css-tricks.com/"
     },
     {
       "name": "Docker",
-      "class": "docker-plain",
+      "class": "docker-plain-wordmark",
       "url": "https://www.docker.com/"
     },
     {
       "name": "Express",
-      "class": "express-original",
+      "class": "express-original-wordmark",
       "url": "https://expressjs.com/"
     },
     {
       "name": "git",
-      "class": "git-plain",
+      "class": "git-plain-wordmark",
       "url": "https://git-scm.com/"
     },
     {
       "name": "github",
-      "class": "github-plain",
+      "class": "github-original-wordmark",
       "url": "https://github.com/shroomlife/"
     },
     {
       "name": "GitLab",
-      "class": "gitlab-plain",
+      "class": "gitlab-plain-wordmark",
       "url": "https://about.gitlab.com/"
     },
     {
       "name": "Google",
-      "class": "google-plain",
+      "class": "google-plain-wordmark",
       "url": "https://developers.google.com/web/"
     },
     {
       "name": "HandlebarsJS",
-      "class": "handlebars-plain",
+      "class": "handlebars-plain-wordmark",
       "url": "https://handlebarsjs.com/"
     },
     {
       "name": "HTML",
-      "class": "html5-plain",
+      "class": "html5-plain-wordmark",
       "url": "https://www.w3.org/html/"
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "name": "jQuery",
-      "class": "jquery-plain",
+      "class": "jquery-plain-wordmark",
       "url": "https://jquery.com/"
     },
     {
@@ -87,22 +87,22 @@
     },
     {
       "name": "MySQL",
-      "class": "mysql-plain",
+      "class": "mysql-plain-wordmark",
       "url": "https://www.mysql.com/"
     },
     {
       "name": "NoSQL Datenbanken",
-      "class": "mongodb-plain",
+      "class": "mongodb-plain-wordmark",
       "url": "https://couchdb.apache.org/"
     },
     {
       "name": "nginx",
-      "class": "nginx-plain",
+      "class": "nginx-plain-wordmark",
       "url": "https://www.nginx.com/"
     },
     {
       "name": "Node.js",
-      "class": "nodejs-plain",
+      "class": "nodejs-plain-wordmark",
       "url": "https://nodejs.org/"
     },
     {
@@ -112,42 +112,107 @@
     },
     {
       "name": "Python",
-      "class": "python-plain",
+      "class": "python-plain-wordmark",
       "url": "https://www.python.org/"
     },
     {
       "name": "React",
-      "class": "react-original",
+      "class": "react-original-wordmark",
       "url": "https://dev.to/ender_minyard/why-you-should-stop-using-react-g7c"
     },
     {
       "name": "Ubuntu",
-      "class": "ubuntu-plain",
+      "class": "ubuntu-plain-wordmark",
       "url": "https://www.ubuntu.com/"
     },
     {
       "name": "VueJS",
-      "class": "vuejs-plain",
+      "class": "vuejs-plain-wordmark",
       "url": "https://vuejs.org/"
     },
     {
       "name": "Webpack",
-      "class": "webpack-plain",
+      "class": "webpack-plain-wordmark",
       "url": "https://webpack.js.org/"
     },
     {
       "name": "Wordpress",
-      "class": "wordpress-plain",
+      "class": "wordpress-plain-wordmark",
       "url": "https://de.wordpress.com/"
     },
     {
       "name": "Yarn",
-      "class": "yarn-plain",
+      "class": "yarn-plain-wordmark",
       "url": "https://yarnpkg.com/"
+    },
+    {
+      "name": "Azure",
+      "class": "azure-plain-wordmark",
+      "url": "https://azure.microsoft.com/"
+    },
+    {
+      "name": "VS Code",
+      "class": "vscode-plain-wordmark",
+      "url": "https://code.visualstudio.com/"
+    },
+    {
+      "name": "MS SQL Server",
+      "class": "microsoftsqlserver-plain-wordmark",
+      "url": "https://www.microsoft.com/de-de/sql-server/"
+    },
+    {
+      "name": "Slack",
+      "class": "slack-plain-wordmark",
+      "url": "https://slack.com/"
+    },
+    {
+      "name": "Socket.IO",
+      "class": "socketio-plain-wordmark",
+      "url": "https://socket.io/"
+    },
+    {
+      "name": "Sass",
+      "class": "sass-original",
+      "url": "https://sass-lang.com/"
+    },
+    {
+      "name": "TypeScript",
+      "class": "typescript-plain",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Photoshop",
+      "class": "photoshop-plain",
+      "url": "https://www.adobe.com/de/products/photoshop.html"
+    },
+    {
+      "name": "NuxtJS",
+      "class": "nuxtjs-plain-wordmark",
+      "url": "https://nuxtjs.org/"
+    },
+    {
+      "name": "Neo4j",
+      "class": "neo4j-plain-wordmark",
+      "url": "https://neo4j.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "class": "postgresql-plain-wordmark",
+      "url": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Less CSS",
+      "class": "less-plain-wordmark",
+      "url": "http://lesscss.org/"
+    },
+    {
+      "name": "Symfony",
+      "class": "symfony-plain-wordmark",
+      "url": "https://symfony.com/"
     }
   ],
   "page": "",
   "zero": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAI=",
-  "seo_desc": "my benefits: javascript, php, react, nodejs, webpack, mysql, aws, firebase, gcm, docker, html, sass, typescript, mongodb, couchdb, nosql, pwa, what ever you need. fullstack for real!",
-  "host": "shroomlife.de"
+  "seo_desc": "Du suchst nach einem erfahrenen Full-Stack-Entwickler aus Baden-Württemberg, der dein Projekt auf die nächste Ebene bringt? Mit über 10 Jahren Erfahrung und einer Leidenschaft für ganzheitliche Web-Entwicklung, verwandele ich visionäre Technologie-Ideen in digitale Realität. Profitiere von Qualität 'Made in Germany' und entdecke die Möglichkeiten, deine Online-Präsenz zu stärken.",
+  "host": "localhost"
 }

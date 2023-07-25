@@ -1,4 +1,4 @@
-FROM node:stretch
+FROM node:lts-stretch
 LABEL maintainer="robin@shroomlife.de"
 
 WORKDIR /usr/src/app

@@ -9,8 +9,8 @@
     "build": "node build",
     "build-mm": "cd mm && npm run-script build",
     "dev": "nodemon -e js,mustache index",
-    "docker": "docker build . --tag shroomlife/shroomlife.de:latest",
-    "push": "docker push shroomlife/shroomlife.de:latest",
+    "docker:build": "docker build . --tag shroomlife/shroomlife.de:latest",
+    "docker:push": "docker push shroomlife/shroomlife.de:latest",
     "start": "node index production"
   },
   "resolutions": {

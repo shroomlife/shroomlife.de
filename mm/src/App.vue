@@ -88,7 +88,6 @@ export default {
       this.login.password = "";
     },
     showException() {
-      console.log('aaaa', new Error().stack)
       this.$swal(
         "Unbekannter Fehler",
         "Es gab einen unbekannten Fehler!",
@@ -106,7 +105,6 @@ export default {
       };
       axios(loginRequestConfig)
         .then((response) => {
-          console.log('Response Length', response.data.length, response.data)
           if (response.data.length === 255) {
             this.login.token = String(response.data);
           } else this.showException();

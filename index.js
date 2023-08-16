@@ -63,7 +63,6 @@ const staticServer = express.static(staticFolder)
 app.use(staticServer)
 
 const publicFolder = path.join(__dirname, '/public')
-console.log('publicFolder', publicFolder, __dirname, process.cwd())
 const publicServer = express.static(publicFolder)
 app.use(publicServer)
 

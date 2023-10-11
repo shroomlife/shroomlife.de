@@ -6,11 +6,10 @@ RUN corepack enable
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY . .
 
 RUN pnpm install --prod
-
-COPY . .
+RUN pnpm run build
 
 EXPOSE 80
 

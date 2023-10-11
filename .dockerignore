@@ -2,3 +2,5 @@
 /mm/node_modules
 /.github
 .env
+
+/public/*.min.*

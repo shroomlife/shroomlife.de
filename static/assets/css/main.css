@@ -2741,28 +2741,31 @@ header.major:after {
 /* Spotlight */
 
 .spotlight {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
 	display: flex;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
+	align-items: flex-start;
 	margin: 0 0 2em 0;
 }
 
 .spotlight .image {
 	width: 30%;
-	border-radius: 100%;
+	border-radius: 50%;
 	margin: 0 3em 0 0;
 	display: block;
 }
 
 .spotlight .image img {
 	display: block;
-	border-radius: 100%;
+	border-radius: 50%;
 	width: 100%;
+}
+
+.spotlight.spotlight-active .image {
+  box-shadow: 0 0 20px rgba(49,141,90,.66); /* Additional outer glow */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.spotlight.spotlight-active .image:hover {
+  box-shadow: 0 0 25px rgba(49,141,90,.66); /* Additional outer glow */
 }
 
 .spotlight .content {

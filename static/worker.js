@@ -1,5 +1,4 @@
 self.addEventListener('install', function () {
-  console.log('INSTALL EVENT')
   caches.delete('shroomlife').then(function () {
     caches.open('shroomlife').then(function (cache) {
       cache.add('/favicon.ico')

@@ -1,14 +1,17 @@
 FROM node:lts-stretch
-LABEL maintainer="robin@shroomlife.de"
+LABEL maintainer="Robin Lehmann <robin@shroomlife.de>"
+ENV TZ=Europe/Berlin
+
+RUN corepack enable
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install --only=production
+RUN pnpm install --prod
 
 COPY . .
 
 EXPOSE 80
 
-CMD ["npm", "run-script", "start"]
+CMD ["pnpm", "run", "start"]

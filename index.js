@@ -7,6 +7,7 @@ const compression = require('compression')
 const http = require('http')
 const cors = require('cors')
 const path = require('path')
+const { fork } = require('child_process')
 
 const app = express()
 const server = http.createServer(app)
@@ -123,15 +124,21 @@ const listener = server.listen(80, () => {
     console.log(`app is listening at http://${address.address}:${address.port}`)
   }
 
-  // if (production) {
-  //   console.log('starting production build ...')
-  //   fork('./build.js', [JSON.stringify(loadConfig())])
-  // }
+  if (production) {
+    try {
+      console.log('starting production build ...')
+      fork('./build.js', [JSON.stringify(loadConfig())])
+    } catch (error) {
+      console.error('Build Error: ', error)
+    }
+  }
 })
 
 function loadConfig () {
   const configString = String(fs.readFileSync(configPath))
   const config = JSON.parse(configString)
+
+  config.currentYear = new Date().getFullYear()
 
   config.host = process.env.HOST ? process.env.HOST : (stage === 'production' ? 'shroomlife.de' : 'localhost')
   return config

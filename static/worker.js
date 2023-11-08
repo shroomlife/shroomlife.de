@@ -1,34 +1,50 @@
-self.addEventListener('install', function () {
-  caches.delete('shroomlife').then(function () {
-    caches.open('shroomlife').then(function (cache) {
-      cache.add('/favicon.ico')
+const CACHE_NAME = "shroomlife-1.3.0";
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      const urlsToCache = ["/favicon.ico"];
+      return cache.addAll(urlsToCache);
     })
-  })
-})
+  );
+});
 
-self.addEventListener('fetch', function (event) {
-  if (event.request.cache === 'reload') {
-    event.respondWith(addResponseToCache(event))
-  } else {
-    event.respondWith(
-      caches.match(event.request).then(function (response) {
-        return response || addResponseToCache(event)
-      })
-    )
-  }
-})
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
-function addResponseToCache (event) {
-  return fetch(event.request).then((response) => {
-    const url = new URL(event.request.url)
-    const cachedResponse = response.clone()
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
 
-    if (url.origin === location.origin) {
-      caches.open('shroomlife').then(function (cache) {
-        cache.put(event.request, cachedResponse)
-      })
-    }
+      var fetchRequest = event.request.clone();
 
-    return response
-  })
-}
+      return fetch(fetchRequest).then((response) => {
+        if (!response || response.status !== 200 || response.type !== "basic") {
+          return response;
+        }
+
+        var responseToCache = response.clone();
+
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
+        });
+
+        return response;
+      });
+    })
+  );
+});

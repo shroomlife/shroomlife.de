@@ -7,10 +7,11 @@
   "main": "index.js",
   "scripts": {
     "build": "node build",
-    "build-mm": "cd mm && npm run-script build",
+    "build-mm": "cd mm && pnpm run build",
     "dev": "nodemon -e js,mustache index",
     "docker:build": "docker build . --tag shroomlife/shroomlife.de:latest",
     "docker:push": "docker push shroomlife/shroomlife.de:latest",
+    "publish": "pnpm run build && pnpm run build-mm && pnpm run docker:build && pnpm run docker:push",
     "start": "node index production"
   },
   "resolutions": {

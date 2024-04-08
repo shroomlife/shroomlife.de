@@ -7,7 +7,9 @@
 	"start_url": "/",
 	"scope": "/",
 	"orientation": "portrait",
-	"icons": [{
+  "lang": "de-DE",
+	"icons": [
+    {
 			"src": "images/icons/icon-72x72.png",
 			"sizes": "72x72",
 			"type": "image/png"

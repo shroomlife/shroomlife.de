@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shroomlife-1.3.0'
+const CACHE_NAME = 'shroomlife-1.3.2'
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

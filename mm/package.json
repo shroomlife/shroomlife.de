@@ -1,6 +1,6 @@
 {
   "name": "mm",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
@@ -31,20 +31,20 @@
     "node-forge": ">= 0.10.0"
   },
   "dependencies": {
-    "axios": "1.6.5",
-    "core-js": "3.35.0",
-    "sweetalert2": "11.10.3",
+    "axios": "1.6.8",
+    "core-js": "3.36.1",
+    "sweetalert2": "11.10.7",
     "vue": "^2",
     "vue-ionicons": "3.0.5",
     "vue-sweetalert2": "5.0.5"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.23.3",
+    "@babel/eslint-parser": "7.24.1",
     "@vue/cli-plugin-babel": "5.0.8",
     "@vue/cli-plugin-eslint": "5.0.8",
     "@vue/cli-service": "5.0.8",
-    "eslint": "8.56.0",
-    "eslint-plugin-vue": "9.20.1",
+    "eslint": "^8",
+    "eslint-plugin-vue": "9.24.1",
     "vue-cli-plugin-bootstrap": "0.4.0",
     "vue-template-compiler": "2.7.16"
   }

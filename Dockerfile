@@ -1,16 +1,13 @@
-FROM node:lts-stretch
+FROM oven/bun:1 as base
 LABEL maintainer="Robin Lehmann <robin@shroomlife.de>"
 ENV TZ=Europe/Berlin
-
-RUN corepack enable
-
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN pnpm install --prod
-RUN pnpm run build
+RUN bun install --production
+RUN bun build.js
 
 EXPOSE 80
 
-CMD ["pnpm", "run", "start"]
+CMD [ "bun", "start" ]

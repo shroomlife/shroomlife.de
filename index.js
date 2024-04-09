@@ -31,7 +31,6 @@ app.use(bodyParser.json())
 
 app.use(compression())
 app.get('/', (req, res) => {
-  console.log('__dirname', __dirname)
   let indexFilePath = path.join(__dirname, '/public/index.min.html')
   fs.access(indexFilePath, fs.constants.R_OK, (err) => {
     if (err) return console.error(err)

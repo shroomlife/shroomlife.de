@@ -4,7 +4,9 @@ module.exports = {
     es6: true,
     node: true,
     browser: true,
-    serviceworker: true
+    serviceworker: true,
+    jquery: true,
+    lazyload: true
   },
   extends: 'standard',
   globals: {

@@ -25,12 +25,9 @@ self.addEventListener('activate', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  // Check if the request is made by a chrome-extension scheme
   if (new URL(event.request.url).protocol === 'chrome-extension:') {
-    // If so, just return without caching
     return
   }
-
   event.respondWith(
     caches.match(event.request).then((response) => {
       if (response) {

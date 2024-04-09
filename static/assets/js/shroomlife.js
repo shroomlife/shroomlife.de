@@ -1,7 +1,9 @@
+const CACHE_NAME = 'shroomlife-1.3.2'
+
 // register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('worker.js', {
+    .register(`worker.js?v=${CACHE_NAME}`, {
       scope: '/'
     })
     .then(function () {})
